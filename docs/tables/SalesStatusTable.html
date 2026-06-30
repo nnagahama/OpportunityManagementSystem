@@ -3,34 +3,105 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>社内案件管理システム</title>
+  <title>営業ステータス</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
   <header id="header-root" aria-label="ページヘッダー">
-    <!-- header will be loaded from header.html via JavaScript -->
+    <!-- header will be loaded from ../header.html via JavaScript -->
   </header>
 
   <main class="container">
     <aside class="sidebar" id="sidebar-root" aria-label="ページ一覧">
-      <!-- サイドバーは JavaScript で sidebar.html から読み込まれます -->
+      <!-- サイドバーは JavaScript で ../sidebar.html から読み込まれます -->
     </aside>
 
     <section class="main-content">
-      <h2>ようこそ</h2>
-      <p>この社内案件管理システムは、案件の進捗管理、レポート確認、社内連携をシンプルにまとめるためのトップページです。レスポンシブ対応なので、パソコン・タブレット・スマートフォンのいずれでも快適に閲覧できます。</p>
-      <div class="action-card">
-        <h3>はじめに</h3>
-        <p>左側のメニューから目的のページに移動してください。必要に応じて、案件の新規登録やレポート出力を行えます。</p>
-      </div>
+      <h3>テーブル情報</h3>
+      <table class="status-table">
+        <thead>
+          <tr>
+            <th>論理テーブル名</th>
+            <th>物理テーブル名</th>
+            <th>備考</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>営業ステータス区分</td>
+            <td>M_SALES_STATUS</td>
+            <td>営業ステータス情報を格納する</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <br />
+
+      <h3>カラム情報</h3>
+      <table class="status-table">
+        <thead>
+          <tr>
+            <th>No.</th>
+            <th>論理カラム名</th>
+            <th>物理カラム名</th>
+            <th>データ型</th>
+            <th>NOT NULL</th>
+            <th>デフォルト値</th>
+            <th>備考</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>営業ステータスコード</td>
+            <td>SALES_STATUS_CODE</td>
+            <td>VARCHAR(2)</td>
+            <td>○</td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>営業ステータス名</td>
+            <td>SALES_STATUS_NAME</td>
+            <td>VARCHAR(50)</td>
+            <td>○</td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+
+        <br />
+
+      <h3>更新履歴</h3>
+      <table class="status-table">
+        <thead>
+          <tr>
+            <th>No.</th>
+            <th>更新日</th>
+            <th>更新者</th>
+            <th>更新内容</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>2026/06/30</td>
+            <td>長浜</td>
+            <td>初版作成</td>
+          </tr>
+        </tbody>
+      </table>
+
     </section>
   </main>
 
   <footer id="footer-root" aria-label="ページフッター">
-    <!-- footer will be loaded from footer.html via JavaScript -->
+    <!-- footer will be loaded from ../footer.html via JavaScript -->
   </footer>
 
   <script>
@@ -45,9 +116,9 @@
       });
 
       Promise.allSettled([
-        fetchText('header.html'),
-        fetchText('sidebar.html'),
-        fetchText('footer.html')
+        fetchText('../header.html'),
+        fetchText('../sidebar.html'),
+        fetchText('../footer.html')
       ])
       .then(results => {
         const [headerResult, sidebarResult, footerResult] = results;
