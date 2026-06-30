@@ -1,0 +1,109 @@
+/* Simple responsive landing page styles */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #222;
+  background-color: #f7f7f7;
+  line-height: 1.6;
+}
+header {
+  background-color: #4caf50;
+  color: #000;
+  padding: 2rem 1.5rem;
+  text-align: center;
+}
+header h1 {
+  margin: 0;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+}
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  gap: 1.5rem;
+}
+.sidebar {
+  flex: 1 1 240px;
+  min-width: 220px;
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+}
+.sidebar h2 {
+  margin-top: 0;
+  font-size: 1.25rem;
+}
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+}
+.sidebar li {
+  margin-bottom: 0.85rem;
+}
+.sidebar a {
+  color: #333;
+  text-decoration: none;
+  display: inline-block;
+  padding: 0.55rem 0.75rem;
+  border-radius: 8px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.sidebar a:hover,
+.sidebar a:focus {
+  background-color: #e8f5e9;
+  color: #111;
+}
+.main-content {
+  flex: 2 1 420px;
+  min-width: 280px;
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+}
+.main-content h2 {
+  margin-top: 0;
+  font-size: 1.8rem;
+}
+.main-content p {
+  margin: 1rem 0;
+}
+.action-card {
+  margin-top: 1.5rem;
+  padding: 1.25rem;
+  border-radius: 10px;
+  background-color: #f1f9f1;
+}
+footer {
+  background-color: #222;
+  color: #ddd;
+  padding: 1rem 1.5rem;
+  text-align: center;
+}
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+  header {
+    padding: 1.75rem 1rem;
+  }
+  .sidebar,
+  .main-content {
+    min-width: 100%;
+  }
+}
+@media (max-width: 500px) {
+  header h1 {
+    font-size: 1.8rem;
+  }
+  .sidebar a {
+    width: 100%;
+  }
+}
